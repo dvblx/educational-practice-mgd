@@ -1,0 +1,142 @@
+*,
+*:before
+*:after 
+{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 h5, h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* полоска */
+header {
+    width: 100%;
+    background: #378dfc;
+    position: absolute;
+    display: flex;
+}
+
+/* лого и меню */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #c1d5f0;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #c1d5f0;
+    cursor: pointer;
+}
+
+.nav {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    position: relative;
+    color: #c1d5f0;
+    transition: color .2s linear;
+}
+
+.nav__link:hover {
+    color: #004088;
+    border-bottom: 3px solid #004088;
+}
+
+
+/* форма */
+.event__wrapper {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: #004088;
+    font-weight: bold;
+}
+
+.form__inputs{
+    align-items: center;
+}
+
+input {
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+textarea {
+    width: 350px;
+    height: 150px;
+    font-size: 20px;
+}
+
+input, textarea {
+    border: 1px solid #333;
+}
+
+.button__block {
+    justify-content: center;
+    font-size: 90px;
+  
+}
+
+input[type=submit] {
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    color: #004088;
+}
+
+input[type=submit]:hover {
+    background: #378dfc;
+    transition: background .4s;
+}
+
+.test1{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676D7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+}

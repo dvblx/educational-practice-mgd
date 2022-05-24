@@ -1,0 +1,49 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block tp %}
+    <link rel="stylesheet" href="{% static 'assets7/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf360ade9b.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+<div class="intro">
+    <div class="container">
+        <div class="intro__container">
+            <form action="{% url 'people' %}">
+                <div class="search__box">
+
+                    <input class="search__txt" type="text" name="search" placeholder="
+                    Найти людей">
+                    <button class="search__btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    </div>
+                        </form>
+
+            </div>
+{% if people %}
+    {% for pers in page_obj %}
+        <div class="intro__container2">
+            <h1 class="intro__title"> {{pers.name_u}} {{pers.surname_u}}</h1>
+            <p>Специализация: {% for s in skills %}
+                {% if s.id == pers.skill_id %}
+                {{s.name_s}}
+                {% endif %}
+                {% endfor %}
+            </p>
+            <p><a class="btn2" href="{{pers.link}}">Связаться</a></p>
+        </div>
+    {% endfor %}
+{% else %}
+<p>Никого нет</p>
+{% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block title %}Люди{% endblock %}

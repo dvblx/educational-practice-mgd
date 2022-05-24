@@ -1,0 +1,29 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block tp %}
+    <link rel="stylesheet" href="{% static 'assets5/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="intro">
+<section class="event__form">
+    <div class="event__wrapper">
+    <form method="post">
+        <div class="form__inputs">
+            {% csrf_token %}
+            {%for c in form%}
+            <p>{{c.label}}:</p> {{c}}
+            {%endfor%}
+    </div>
+        <p><button class="test1" type="submit">Отправить</button></p>
+</form>
+            </div>
+</section>
+    </div>
+{% endblock %}
+{% block scrpt %}
+<script src="{% static 'assets/js/script.js' %}"></script>
+{% endblock %}
+{% block title %}Создание карточки пользователя{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'main/base.html'%}
+{% block title %}Регистрация{% endblock %}
+{% load static %}
+{% block tp %}
+    <link rel="stylesheet" href="{% static 'assets3/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf360ade9b.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+<div class="intro">
+    <center>
+<h1>{{title}}</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class = "form-error"> {{ form.non_field_errors}}</div>
+    {%for f in form%}
+    <p><label class="form-label" for = "{{ f.id_for_label}}">{{f.label}}: </label>{{ f }}</p>
+    <div class = "form-error">{{f.errors}}</div>
+    {%endfor%}
+    <button type="submit">Регистрация</button>
+    <p><a href="/enter" class="nav-link">Я уже зарегистрирован</a></p>
+</form>
+    </center>
+</div>
+{% endblock %}

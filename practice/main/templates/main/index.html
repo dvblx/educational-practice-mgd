@@ -1,0 +1,56 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block tp %}
+    <link rel="stylesheet" href="{% static 'assets3/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf360ade9b.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+    <div class="intro">
+            <div class="container">
+                <div class="intro__container">
+                    <h1 class="intro__title">Добро пожаловать на платформу RSUE<span class="welcome"> TALENTS</span></h1>
+                    <p class="intro__suptitle">Здесь ты сможешь найти свой путь в творчество</p>
+                    <a href="/events" class="btn">Начать путь</a>
+                </div>
+            </div>
+        </div>
+
+    <section class="section">
+        <div class="container">
+
+            <div class="section__header">
+                <h3 class="section__suptitle">Что это такое?</h3>
+                <h3 class="section__title">Немного о платформе:</h3>
+                <div class="section__text">
+                    <p>RSUE TALENTS - это платформа, где ты можешь найти единомышленников, приобрести навыки, найти ментора по специальности или самостоятельно создавать и собирать людей на различные мероприятия</p>
+                </div>
+            </div>
+
+            <div class="about">
+                <div class="about__item">
+                    <div class="about__img">
+                        <img src="{% static 'assets3/image/1.jpg' %}" alt="">
+                    </div>
+                    <div class="about__text">Приобрети навыки</div>
+                </div>
+                <div class="about__item">
+                    <div class="about__img">
+                        <img src="{% static 'assets3/image/2.jpg' %}" alt="">
+                    </div>
+                    <div class="about__text">Собери единомышленников</div>
+                </div>
+                <div class="about__item">
+                    <div class="about__img">
+                        <img src="{% static 'assets3/image/3.jpg' %}" alt="">
+                    </div>
+                    <div class="about__text">Найди ментора</div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block title %}Главная{% endblock %}

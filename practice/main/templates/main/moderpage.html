@@ -1,0 +1,42 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block tp %}
+    <link rel="stylesheet" href="{% static 'assets7/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf360ade9b.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+<div class="intro">
+    {% if request.user.is_superuser%}
+
+      <div class="container">
+          <div class="intro__container">
+        <p></p><p></p>
+          </div>
+        {% if evntss %}
+        {% for ev in evntss %}
+          {%if not ev.is_ok %}
+            <div class="intro__container2">
+                <h3> {{ev.name_e}} </h3>
+                {% autoescape on %}
+                <p>{{ev.about|linebreaks|truncatewords:30}}</p>
+                {% endautoescape %}
+                <p>{{ev.time}}</p>
+                 <a href ="{{ev.get_absolute_url}}update">Подробнее о мероприятии</a>
+            </div>
+          {%else %}
+          {%endif%}
+        {% endfor %}
+    {% else %}
+        <p>Ближайших мероприятий нет</p>
+    {% endif %}
+    </div>
+    {% else %}
+    <center><h1>Съеби)</h1></center><h1></h1>
+    {% endif %}
+</div>
+{% endblock %}
+{% block title %}События{% endblock %}

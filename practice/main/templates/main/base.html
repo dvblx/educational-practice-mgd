@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% block tp %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="header__inner">
+            <a href="/home" class="nav__link active" aria-current="page">
+            <div class="logo">RSUE TALENTS</div>
+            </a>
+            <nav class="nav" id="myNav">
+                <a class="nav__link" href="/people" >Люди</a>
+                <a href="/events" class="nav__link">Мероприятия</a>
+                {% if request.user.is_authenticated %}
+                    <a href="/userprofile" class="nav__link" >{{user.username}}</a>|<a href="/logout" class="nav__link">Выйти</a>
+                    {% if request.user.is_superuser%}
+                    <a class="nav__link" href="/moderpage">Модерация</a>
+                    {% endif %}
+                {% else %}
+                    <a href="/register" class="nav__link">Регистрация</a> | <a href="/enter" class="nav__link">Авторизация</a>
+                {% endif %}
+                    <a class = "nav__link" href = "https://vk.com/tk.rsue">
+                        <i class="fa-brands fa-vk"></i>
+                    </a>
+                <a class="nav__link" href="https://t.me/rsue_rinh">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </nav>
+
+    </div>
+    </div>
+    </header>
+    {% block image %}{% endblock %}
+    {% block content %}{% endblock %}
+
+    {% block scrpt %}{% endblock %}
+</body>
+</html>
